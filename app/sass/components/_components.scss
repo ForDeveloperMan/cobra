@@ -324,9 +324,11 @@ a{
 .checkbox-el{
 	display: flex;
 	&__dec{
-		margin-top: 10px;
+		
 	}
 	&__text{
+		
+		align-items: center;
 		margin-top: 6px;
 		margin-left: 20px;
 		font-family: 'Montserrat';
@@ -528,13 +530,13 @@ a{
 }
 
 .ui-datepicker{
-
 	z-index: 999 !important;
 	background: #FFFFFF;
 	border: 1px solid rgba(255, 184, 145, 0.5);
-	padding: 25px 25px;
+	padding: 14px 15px;
 	font-family: 'Montserrat';
 	width: 358px;
+	padding-bottom: 20px;
 	.ui-datepicker-title{
 		font-weight: 600;
 		font-size: 14px;
@@ -550,7 +552,7 @@ a{
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		margin-bottom: 23px;
+		margin-bottom: 26px;
 	}
 	.ui-datepicker-next, .ui-datepicker-prev{		
 		width: 30px;
@@ -576,6 +578,12 @@ a{
 		color: #080A0F;
 		padding: 0;
 	}
+	thead{
+		span{
+			display: block;
+			margin-bottom: 10px;
+		}
+	}
 }
 .ui-helper-clearfix:before, .ui-helper-clearfix:after{
 	display: none;
@@ -596,4 +604,83 @@ a{
 }
 .ui-state-active{
 	background: #FFB891 !important;
+}
+.ui-datepicker table{
+	margin: 0;
+}
+
+.block-form-4{
+	background: rgba(8, 10, 15, 0.5);
+	border: 1px solid rgba(255, 184, 145, 0.5);
+	padding: 30px 30px;
+	display: flex;
+	justify-content: space-between;
+	&__el{
+		width: 48%;
+	}
+	&__inp{
+		margin-bottom: 10px;
+	}
+	&__checkbox{
+		margin-top: 16px;
+		text-align: left;
+	}
+	&__btn{
+		width: 100%;
+		margin-top: 31px;
+	}
+}
+
+.select{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.block-gallery-small{
+	background: rgba(8, 10, 15, 0.5);
+	border: 1px solid rgba(255, 184, 145, 0.5);
+	padding: 30px 30px;
+	overflow: hidden;
+	position: relative;
+	&__el{
+		margin-right: 20px;
+		&:nth-child(1n){
+			width: 54%;
+		}
+		&:nth-child(2n){
+			width: 43%;
+		}
+	}
+	&__nav{
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		display: flex;
+		z-index: 10;
+	}
+}
+
+.gallery-small-el{
+	display: block;
+	&__img{
+		width: 100%;
+		height: 307px;
+		object-fit: cover;
+	}
+}
+
+.swiper-arr{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(8, 10, 15, 0.5);
+	border: 1px solid rgba(255, 184, 145, 0.5);
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	transition: .2s;
+	&:hover{
+		background: #080A0F;
+		border: 1px solid #FFB891;
+	}
 }

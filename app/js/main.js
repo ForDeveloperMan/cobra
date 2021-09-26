@@ -55,28 +55,34 @@ $(".inpTel").mask("+7(999) 999-99-99");
 
 function closeMap() {
     $('.sec-header').removeClass('sec-header_openmap');
-    $('.sec-header__formMap').hide();
-    $('.sec-header__bottom').fadeIn(200);
     $('.sec-header__map').removeClass('active');
+    $('.sec-header__formMap').hide();
     $('.sec-header__right').show();
-    ///////
-    $('.sec-header_3__content').removeClass('active');
+    if ( $(window).width() > 991 ) {
+      $('.sec-header__bottom').fadeIn(200);
+      $('.sec-header_3__content').removeClass('active');
+    }else{
+      
+    }
 }
 function showMap() {
     $('.sec-header').addClass('sec-header_openmap');
-    $('.sec-header__bottom').hide();
     $('.sec-header__map').addClass('active');
-    $('.sec-header__formMap').fadeIn(200);
-    $('.sec-header__right').hide();
     if ( !($('.sec-header__map-iframe').hasClass('active')) ) {
       $('.sec-header__map-iframe').addClass('active');
       $('.sec-header__map-iframe').attr('src', $('.sec-header__map-iframe').data('src'));
     }
-    ///////
     $('.sec-header_3__content').addClass('active');
+    $('.sec-header__formMap').fadeIn(200);
+    $('.sec-header__right').hide();
+    if ( $(window).width() > 991 ) {
+      $('.sec-header__bottom').hide();
+    }else{
+      
+    }
 }
 
-$('.mapbtn, .sec-header__map-btn').on('click', function() {
+$('.mapbtn, .sec-header__map-btn, .sec-header__mapbtn-mob').on('click', function() {
   var wrap = $('.sec-header');
   if ( wrap.hasClass('sec-header_openmap') ) {
     closeMap();
@@ -113,7 +119,7 @@ if(dateNow < 10){
 var dateFin = '' + yearNow + '/' + monthNow + '/' + dateNow + '';
 
 $.datepicker.setDefaults( $.datepicker.regional[ "ru" ] );
-$( ".inpDate" ).datepicker({
+$( ".inpDate, .block-date" ).datepicker({
   minDate: new Date(dateFin),
   dateFormat: "dd/mm/yy",
 });
@@ -123,9 +129,24 @@ jQuery(function($){
     var div = $('.sec-header__map');
     if (!div.is(e.target) // если клик был не по нашему блоку
         && div.has(e.target).length === 0) { // и не по его дочерним элементам
-        closeMap();
+        if ( $(window).width() > 991 ) {
+          closeMap();
+        }
     }
   });
+});
+
+
+
+
+const swiper = new Swiper('.block-gallery-small__content', {
+  slidesPerView: 2,
+  spaceBetween: 20,
+  slidesPerView: 'auto',
+  navigation: {
+    prevEl: '.block-gallery-small__prev',
+    nextEl: '.block-gallery-small__next',
+  },
 });
 
 }); //end ready

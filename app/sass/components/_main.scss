@@ -115,7 +115,7 @@ body{
 	width: 100%;
 	bottom: 0;
 	background: #080A0F;
-	z-index: 100;
+	z-index: 199;
 	overflow-y: auto;
 	display: none;
 	&__textbg{
@@ -149,6 +149,10 @@ body{
 	}
 }
 
+.sec-header__mapbtn-mob{
+	display: none;
+	z-index: 100;
+}
 
 .sec-header{
 	background-repeat: no-repeat;
@@ -156,6 +160,21 @@ body{
 	background-size: cover;
 	position: relative;
 	min-height: 900px;
+	&__overlay{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 100;
+		display: none;
+	}
+	.container{
+		position: static;
+	}
+	&__mob{
+		display: none;
+	}
 	&__map{
 		position: absolute;
 		top: 100px;
@@ -183,8 +202,14 @@ body{
 			justify-content: center;
 			border-radius: 0 100px 100px 0;
 			cursor: pointer;
+			z-index: 20;
+			&-mob{
+				display: none;
+			}
 		}
 		&-iframe{
+			position: relative;
+			z-index: 1;
 			width: 100%;
 			height: 100%;
 		}
@@ -241,16 +266,23 @@ body{
 		right: 1.5px;
 	}
 	&_openmap{
-		.sec-header__wrap{
-			padding-top: 182px;
-		}
-		.sec-header__title{
-			margin-bottom: 36px;
+		@media screen and (min-width: 991px){
+			.sec-header__wrap{
+				padding-top: 182px;
+			}
+			.sec-header__title{
+				margin-bottom: 36px;
+			}
 		}
 	}
 	&__formMap{
 		display: none;
 		margin-top: 110px;
+	}
+	&__img2{
+		position: absolute;
+		bottom: 0;
+		right: -26px;
 	}
 	&_2{
 		.sec-header__wrap{
@@ -346,6 +378,42 @@ body{
 			position: absolute;
 			bottom: 0;
 			right: -159px;
+		}
+	}
+	&_5{
+		&__wrap{
+			padding: 184px 0;
+			padding-bottom: 105px;
+		}
+		&__content{
+			text-align: center;
+		}
+		&__title{
+			position: relative;
+			padding-bottom: 25px;
+			margin-bottom: 28px;
+			&::after{
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+				height: 1px;
+				background: #FFB891;
+				width: 45px;
+				opacity: 0.5;
+			}
+		}
+		&__bottom{
+			margin-top: 64px;
+			display: flex;
+			justify-content: space-between;
+			&-left{
+				width: 53%;
+			}
+			&-right{
+				width: 45%;
+			}
 		}
 	}
 }
