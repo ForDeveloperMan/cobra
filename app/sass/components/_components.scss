@@ -428,6 +428,9 @@ a{
 	// 	width: 100vw;
 	// 	background: rgba(56, 182, 69, 0.3);
 	// }
+	&.hide_def{
+		display: none !important;
+	}
 	&__arr{
 		width: 24px;
 		border-right: 1px solid rgba(64, 231, 81, 0.5);
@@ -530,7 +533,7 @@ a{
 }
 
 .ui-datepicker{
-	z-index: 999 !important;
+	z-index: 333 !important;
 	background: #FFFFFF;
 	border: 1px solid rgba(255, 184, 145, 0.5);
 	padding: 14px 15px;
@@ -636,6 +639,28 @@ a{
 	-moz-appearance: none;
 }
 
+.dots{
+	display: flex;
+	justify-content: center;
+	.swiper-pagination-bullet{
+		background: #FFFFFF;
+		opacity: 0.3;
+		width: 5px;
+		height: 5px;
+		display: block;
+		border-radius: 0;
+		margin: 0 !important;
+		margin-right: 5px !important;
+		&:last-child{
+			margin-right: 0 !important;
+		}
+		&.swiper-pagination-bullet-active{
+			background: #FFB891;
+			opacity: 1;
+		}
+	}
+}
+
 .block-gallery-small{
 	background: rgba(8, 10, 15, 0.5);
 	border: 1px solid rgba(255, 184, 145, 0.5);
@@ -658,7 +683,12 @@ a{
 		display: flex;
 		z-index: 10;
 	}
+	&__dots{
+		display: none;
+		margin-top: 21px;
+	}
 }
+
 
 .gallery-small-el{
 	display: block;
