@@ -428,6 +428,16 @@
 	.sec-header__img2{
 		margin-top: 40px;
 	}
+
+	.sec-header__form-img{
+		display: block;
+	}
+	.sec-header_2__form{
+		margin-top: 180px;
+	}
+	.sec-header__img_1{
+		display: none;
+	}
 }
 
 @media screen and (max-width: 991px){
@@ -864,5 +874,8 @@
 	}
 	.sec-header_5__wrap{
 		padding-bottom: 40px;
+	}
+	.sec-header_2__form{
+		margin-top: 0px;
 	}
 }

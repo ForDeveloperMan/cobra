@@ -21,6 +21,7 @@ body{
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	overflow-x: hidden;
 	&::after{
 		content: '';
 		position: absolute;
@@ -67,7 +68,7 @@ body{
 		background: #080A0F;
 	}
 	.container{
-		max-width: 1590px;
+		// max-width: 1590px;
 	}
 	&__wrap{
 		
@@ -158,6 +159,9 @@ body{
 	background-position: center top;
 	background-size: cover;
 	position: relative;
+	@media screen and (min-width: 1280px){
+		min-height: 900px;
+	}
 	&__overlay{
 		position: absolute;
 		top: 0;
@@ -425,4 +429,8 @@ body{
 	&.hide_def{
 		display: none !important;
 	}
+}
+
+.sec-header__form-img{
+	display: none;
 }

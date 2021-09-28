@@ -140,18 +140,6 @@ $( ".inpDate, .block-date" ).datepicker({
   dateFormat: "dd/mm/yy",
 });
 
-jQuery(function($){
-  $('body').mouseup(function (e){ // событие клика по веб-документу
-    var div = $('.sec-header__map');
-    if (!div.is(e.target) // если клик был не по нашему блоку
-        && div.has(e.target).length === 0) { // и не по его дочерним элементам
-        if ( $(window).width() > 991 ) {
-          closeMap();
-        }
-    }
-  });
-});
-
 
 
 
