@@ -3,7 +3,14 @@
 }
 
 .overlay{
-	background: linear-gradient(179.16deg, rgba(12, 15, 23, 0.7) 9.43%, rgba(12, 15, 23, 0) 24.11%);
+	background: rgba(12, 15, 23, 0.9);
+}
+
+#modal-apartments{
+	z-index: 999;
+}
+#modal-order{
+	z-index: 1020;
 }
 
 .modal{
@@ -20,11 +27,10 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		// justify-content: center;
+		justify-content: center;
 		position: relative;
 		padding: 50px 20px;
 		padding-bottom: 20px;
-		padding-top: 75px;
 	}
 	&__content{
 		position: relative;
@@ -44,24 +50,99 @@
 
 
 .modal-content{
-	background: #F3F6FA;
-	box-shadow: 0px 10px 31px rgba(62, 72, 85, 0.4);
-	border-radius: 10px;
-	padding: 57px 41px;
-	padding-bottom: 50px;
-	max-width: 1140px;
+	background: #FFFFFF;
+	max-width: 1530px;
 	width: 100%;
 	&__close{
 		cursor: pointer;
 		position: absolute;
-		top: 20px;
-		right: 20px;
+		top: 10px;
+		right: 10px;
+		width: 45px;
+		height: 45px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(255, 255, 255, 0.5);
+		border: 1px solid rgba(255, 184, 145, 0.5);
+		z-index: 100;
+	}
+}
+
+.modal-apartments{
+	&__content{
+		display: flex;
+	}
+	&__left{
+		width: 54%;
+	}
+	&__right{
+		flex: 1;
+		background: rgba(#FFB891, 0.08);
+		padding: 55px 35px;
+		padding-bottom: 20px;
+		position: relative;
+		&-title{
+			margin-bottom: 310px;
+		}
+		&-img{
+			position: absolute;
+		    top: 114px;
+    		left: 14px;
+			width: 680px;
+			max-width: none;
+			pointer-events: none;
+		}
+	}
+	&__left{
+		padding: 30px 30px;
+		padding-right: 48px;
+	}
+	&__bottom{
+		border-top: 1px solid rgba(#080A0F, 0.1);
+		margin-top: 32px;
+		padding-top: 29px;
+	}
+}
+
+.modal-order{
+	max-width: 1010px;
+	&__close{
+		background: rgba(8, 10, 15, 0.5);
+		svg{
+			path{
+				fill: #fff;
+			}
+		}
+	}
+	&__content{
+		display: flex;
+	}
+	&__img{
+		max-width: 440px;
+		width: 100%;
+	}
+	&__body{
+		flex: 1;
+		padding: 49px 52px;
 	}
 	&__title{
-		margin-bottom: 30px;
+		color: #080A0F;
+		margin-bottom: 16px;
+	}
+	&__form{
+		margin-top: 30px;
+	}
+	&__checkbox{
+		margin-top: 20px;
+	}
+	.checkbox-el__text{
+		margin-top: 0;
+		color: #080A0F;
 	}
 	&__btn{
-		margin-top: 10px;
-		padding: 16px 42px;
+		display: flex;
+		width: 100%;
+		margin-top: 27px;
 	}
 }

@@ -138,13 +138,121 @@
 	
 </div>
 
+</div>
+
 <!-- modal start -->
-<div class="modal" id="modal-start">
+<div class="modal" id="modal-apartments">
 	<div class="modal__wrap">
-		<div class="modal__content modal-content">
-			<svg class="modal-content__close" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.0156 22.4298L1.57019 2.98441C1.08228 2.49651 1.08228 1.70455 1.57019 1.21665C2.05809 0.728742 2.85005 0.728742 3.33795 1.21665L22.7834 20.6621C23.2713 21.15 23.2713 21.9419 22.7834 22.4298C22.2955 22.9178 21.5035 22.9178 21.0156 22.4298Z" fill="#4B5C72"/><path d="M1.03987 20.4853L20.4853 1.03982C20.9732 0.551915 21.7652 0.551915 22.2531 1.03982C22.741 1.52773 22.741 2.31968 22.2531 2.80759L2.80764 22.253C2.31973 22.7409 1.52778 22.7409 1.03987 22.253C0.551965 21.7651 0.551966 20.9732 1.03987 20.4853Z" fill="#4B5C72"/></svg>
-			<div class="modal-content__body">
-				
+		<div class="modal__content modal-content modal-apartments">
+			<div class="modal-content__close"><svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.87988 0.888672L5.36426 4.375L8.87988 7.86133L8.00098 8.74023L4.48535 5.25391L0.999023 8.74023L0.120117 7.86133L3.60645 4.375L0.120117 0.888672L0.999023 0.00976562L4.48535 3.49609L8.00098 0.00976562L8.87988 0.888672Z" fill="#080A0F"/></svg></div>
+			<div class="modal-apartments__content">
+				<div class="modal-apartments__left">
+					<div class="apartments-info">
+						<img src="../img/block-apartments/4.jpg" alt="" class="apartments-info__img">
+						<div class="apartments-info__body">
+							<div class="apartments-info__title title title_med2">Апартаменты с 1-й спальней</div>
+							<div class="apartments-info__block">
+								<div class="block-descrp" id="block-descrp">
+									<div class="block-descrp__el descrp-el">
+										<span class="descrp-el__title">Этаж</span>
+										<div class="descrp-el__dots"></div>
+										<span class="descrp-el__val">15 из 20</span>
+									</div>
+									<div class="block-descrp__el descrp-el">
+										<span class="descrp-el__title">Площадь</span>
+										<div class="descrp-el__dots"></div>
+										<span class="descrp-el__val">50,5 м2</span>
+									</div>
+									<div class="block-descrp__el descrp-el">
+										<span class="descrp-el__title">Cпальни</span>
+										<div class="descrp-el__dots"></div>
+										<span class="descrp-el__val">2</span>
+									</div>
+								</div>
+							</div>
+							<div class="apartments-info__block">
+								<div class="block-descrp">
+									<div class="block-descrp__el descrp-el">
+										<span class="descrp-el__title">Стоимость</span>
+										<div class="descrp-el__dots"></div>
+										<span class="descrp-el__cost" id="apartments-cost">123 000 000 ₽</span>
+									</div>
+									<div class="block-descrp__el descrp-el">
+										<span class="descrp-el__title descrp-el__title_small">Стоимость за м2</span>
+										<div class="descrp-el__dots"></div>
+										<span class="descrp-el__title descrp-el__title_small" id="apartments-m">971 000 ₽ за м²</span>
+									</div>
+									<div class="block-descrp__el descrp-el">
+										<span class="descrp-el__val descrp-el__val_small">Ипотека</span>
+										<div class="descrp-el__dots"></div>
+										<span class="descrp-el__val descrp-el__val_small" id="apartments-credit">за 72 часа</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-apartments__bottom">
+						<div class="block-call-info">
+							<img src="../img/man.jpg" alt="" class="block-call-info__img">
+							<div class="block-call-info__body">
+								<div class="block-call-info__name">Иван Иванов</div>
+								<div class="block-call-info__info">Ваш менеджер по кредитованию</div>
+								<a href="tel:+78232413454" class="block-call-info__tel iconText"><svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.95703 6.33594C4.05859 8.51562 5.71094 10.168 7.91406 11.293L9.56641 9.64062C9.77734 9.40625 10.0352 9.34766 10.3398 9.46484C11.1836 9.74609 12.0742 9.88672 13.0117 9.88672C13.1992 9.88672 13.3633 9.95703 13.5039 10.0977C13.668 10.2383 13.75 10.4141 13.75 10.625V13.2617C13.75 13.4492 13.668 13.625 13.5039 13.7891C13.3633 13.9297 13.1992 14 13.0117 14C10.6914 14 8.54688 13.4375 6.57812 12.3125C4.63281 11.1641 3.08594 9.61719 1.9375 7.67188C0.8125 5.70312 0.25 3.55859 0.25 1.23828C0.25 1.05078 0.320312 0.886719 0.460938 0.746094C0.625 0.582031 0.800781 0.5 0.988281 0.5H3.625C3.83594 0.5 4.01172 0.582031 4.15234 0.746094C4.29297 0.886719 4.36328 1.05078 4.36328 1.23828C4.36328 2.17578 4.50391 3.06641 4.78516 3.91016C4.87891 4.21484 4.82031 4.47266 4.60938 4.68359L2.95703 6.33594Z" fill="#FFB891"/></svg>+7 823 241 34 54</a>
+							</div>
+							<a href="#" class="btn block-call-info__btn">Записаться на экскурсию</a>
+						</div>
+					</div>
+				</div>
+				<div class="modal-apartments__right">
+					<div class="modal-apartments__right-title title title_med2">Скачать презентацию</div>
+					<img src="../img/modalAp.png" alt="" class="modal-apartments__right-img">
+					<form class="form-mini">
+						<div class="form-mini__title title title_med">заполните форму</div>
+						<div class="form-mini__content">
+							<div class="form-mini__content-inp form-el">
+								<svg class="form-el__icon" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.40625 5.1875C3.38542 7.125 4.85417 8.59375 6.8125 9.59375L8.28125 8.125C8.46875 7.91667 8.69792 7.86458 8.96875 7.96875C9.71875 8.21875 10.5104 8.34375 11.3438 8.34375C11.5104 8.34375 11.6562 8.40625 11.7812 8.53125C11.9271 8.65625 12 8.8125 12 9V11.3438C12 11.5104 11.9271 11.6667 11.7812 11.8125C11.6562 11.9375 11.5104 12 11.3438 12C9.28125 12 7.375 11.5 5.625 10.5C3.89583 9.47917 2.52083 8.10417 1.5 6.375C0.5 4.625 0 2.71875 0 0.65625C0 0.489583 0.0625 0.34375 0.1875 0.21875C0.333333 0.0729167 0.489583 0 0.65625 0H3C3.1875 0 3.34375 0.0729167 3.46875 0.21875C3.59375 0.34375 3.65625 0.489583 3.65625 0.65625C3.65625 1.48958 3.78125 2.28125 4.03125 3.03125C4.11458 3.30208 4.0625 3.53125 3.875 3.71875L2.40625 5.1875Z" fill="#080A0F"></path></svg>
+								<input type="text" class="form-el__inp inp inpTel" placeholder="ваш телефон" required>
+							</div>
+							<button class="form-mini__content-btn btn">скачать <svg width="16" height="20" viewBox="0 0 16 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.375 7.5H9.48437C8.39062 7.5 7.5 6.60938 7.5 5.51562V0.625C7.5 0.398438 7.55859 0.1875 7.66797 0H1.35937C0.609375 0 0 0.609375 0 1.35938V18.6445C0 19.3906 0.609375 20 1.35937 20H13.6445C14.3945 20 15.0039 19.3906 15.0039 18.6406V7.33203C14.8125 7.44141 14.6016 7.5 14.375 7.5ZM5.18359 11.4336C5.42578 11.1914 5.82422 11.1914 6.06641 11.4336L6.875 12.2422V8.4375C6.875 8.09375 7.15625 7.8125 7.5 7.8125C7.84375 7.8125 8.125 8.09375 8.125 8.4375V12.2422L8.93359 11.4336C9.17578 11.1914 9.57422 11.1914 9.8164 11.4336C10.0586 11.6758 10.0586 12.0742 9.8164 12.3164L7.9414 14.1914C7.80859 14.3281 7.62109 14.3867 7.4375 14.3711C7.125 14.3281 7.22266 14.3594 5.17969 12.3164C4.9375 12.0742 4.9375 11.6758 5.18359 11.4336ZM10.625 16.875H4.375C4.03125 16.875 3.75 16.5938 3.75 16.25C3.75 15.9062 4.03125 15.625 4.375 15.625H10.625C10.9687 15.625 11.25 15.9062 11.25 16.25C11.25 16.5938 10.9687 16.875 10.625 16.875ZM9.48437 6.25H14.375L8.75 0.625V5.51562C8.75 5.92188 9.07812 6.25 9.48437 6.25Z" fill="#080A0F"></path></svg></button>
+						</div>
+						<label class="checkbox-el form-mini__checkbox">
+							<span class="checkbox-el__dec checkbox-def">
+								<input type="checkbox" class="checkbox-def__inp" required>
+								<svg class="checkbox-def__dec" width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.43406 8.41406L12.4145 0.433594L13.4341 1.48828L4.43406 10.4883L0.25047 6.30469L1.30516 5.25L4.43406 8.41406Z" fill="#080A0F"></path></svg>
+							</span>
+							<span class="checkbox-el__text">Даю согласие на обработку персональных данных и согласен с <a href="#">политикой конфиденциальности</a></span>
+						</label>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="modal__overlay overlay"></div>
+	</div>
+</div>
+<div class="modal" id="modal-order">
+	<div class="modal__wrap">
+		<div class="modal__content modal-content modal-order">
+			<div class="modal-content__close modal-order__close"><svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.87988 0.888672L5.36426 4.375L8.87988 7.86133L8.00098 8.74023L4.48535 5.25391L0.999023 8.74023L0.120117 7.86133L3.60645 4.375L0.120117 0.888672L0.999023 0.00976562L4.48535 3.49609L8.00098 0.00976562L8.87988 0.888672Z" fill="#080A0F"/></svg></div>
+			<div class="modal-order__content">
+				<div class="modal-order__body">
+					<div class="modal-order__title title title_secmed title_dec2">Записаться на экскурсию</div>
+					<p class="text-info2">Укажите свои контакты и менеджер свяжется с вами для уточнения удобного времени экскурсии</p>
+					<form class="modal-order__form">
+						<div class="form-el">
+							<svg class="form-el__icon" width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.40625 5.1875C3.38542 7.125 4.85417 8.59375 6.8125 9.59375L8.28125 8.125C8.46875 7.91667 8.69792 7.86458 8.96875 7.96875C9.71875 8.21875 10.5104 8.34375 11.3438 8.34375C11.5104 8.34375 11.6562 8.40625 11.7812 8.53125C11.9271 8.65625 12 8.8125 12 9V11.3438C12 11.5104 11.9271 11.6667 11.7812 11.8125C11.6562 11.9375 11.5104 12 11.3438 12C9.28125 12 7.375 11.5 5.625 10.5C3.89583 9.47917 2.52083 8.10417 1.5 6.375C0.5 4.625 0 2.71875 0 0.65625C0 0.489583 0.0625 0.34375 0.1875 0.21875C0.333333 0.0729167 0.489583 0 0.65625 0H3C3.1875 0 3.34375 0.0729167 3.46875 0.21875C3.59375 0.34375 3.65625 0.489583 3.65625 0.65625C3.65625 1.48958 3.78125 2.28125 4.03125 3.03125C4.11458 3.30208 4.0625 3.53125 3.875 3.71875L2.40625 5.1875Z" fill="#080A0F"></path></svg>
+							<input type="text" class="form-el__inp inp inpTel" placeholder="ваш телефон">
+						</div>
+						<label class="checkbox-el modal-order__checkbox">
+							<span class="checkbox-el__dec checkbox-def">
+								<input type="checkbox" class="checkbox-def__inp" required="">
+								<svg class="checkbox-def__dec" width="14" height="11" viewBox="0 0 14 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.43406 8.41406L12.4145 0.433594L13.4341 1.48828L4.43406 10.4883L0.25047 6.30469L1.30516 5.25L4.43406 8.41406Z" fill="#080A0F"></path></svg>
+							</span>
+							<span class="checkbox-el__text">Даю согласие на обработку персональных данных и согласен с <a href="#">политикой конфиденциальности</a></span>
+						</label>
+						<button class="btn modal-order__btn">Записаться</button>
+					</form>
+				</div>
+				<img src="../img/modal-order.jpg" alt="" class="modal-order__img">
 			</div>
 		</div>
 		<div class="modal__overlay overlay"></div>
@@ -154,9 +262,10 @@
 
 <script src="../js/jquery-3.6.0.min.js"></script>
 <script src="../js/swiper-bundle.min.js"></script>
-<script src="../js/fancybox.umd.js"></script>
+<script src="../js/jquery.fancybox.min.js"></script>
+<script src="../js/ion.rangeSlider.min.js"></script>
 <script src="../js/main.js"></script>
 
-<!-- <script src="/PixelPerfect/pixelScreen.js"></script> -->
+<!-- <script src="../PixelPerfect/pixelScreen.js"></script> -->
 </body>
 </html>

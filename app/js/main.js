@@ -165,4 +165,177 @@ const swiper = new Swiper('.block-gallery-small__content', {
   }
 });
 
+const swiper2 = new Swiper('.block-gallery', {
+  slidesPerView: 3,
+  spaceBetween: 60,
+  preloadImages: false,
+  lazy: true,
+  centeredSlides: true,
+  initialSlide: 2,
+  navigation: {
+    prevEl: '.block-gallery__prev',
+    nextEl: '.block-gallery__next',
+  },
+  pagination: {
+    el: '.block-gallery__dots',
+  },
+  on: {
+    init: function (e) {
+      $('.block-gallery__count-from').text(e.realIndex+1);
+      $('.block-gallery__count-to').text(e.slides.length);
+      setTimeout(s, 150);
+      function s() {
+      	$('.block-gallery').addClass('active');
+      }
+    },
+    slideChange: function (e) {
+      $('.block-gallery__count-from').text(e.realIndex+1);
+      $('.block-gallery__count-to').text(e.slides.length);
+    },
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    0: {
+      
+    },
+    601: {
+      
+    },
+  }
+});
+
+$('.block-checks__el').on('click', function() {
+	$(this).toggleClass('active');
+});
+
+// range start
+function number_format( number, decimals, dec_point, thousands_sep ) {  // Format a number with grouped thousands
+    var i, j, kw, kd, km;
+
+    if( isNaN(decimals = Math.abs(decimals)) ){
+        decimals = 0;
+    }
+    if( dec_point == undefined ){
+        dec_point = ",";
+    }
+    if( thousands_sep == undefined ){
+        thousands_sep = " ";
+    }
+
+    i = parseInt(number = (+number || 0).toFixed(decimals)) + "";
+
+    if( (j = i.length) > 3 ){
+        j = j % 3;
+    } else{
+        j = 0;
+    }
+
+    km = (j ? i.substr(0, j) + thousands_sep : "");
+    kw = i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousands_sep);
+    kd = (decimals ? dec_point + Math.abs(number - i).toFixed(decimals).replace(/-/, 0).slice(2) : "");
+
+    return km + kw + kd;
+}
+$(".rangle-el__inp").ionRangeSlider({
+	type: "double",
+	onChange: function (data) {
+		let wrap = $(data.slider[0]).closest('.rangle-el');
+		let valFrom = number_format(data.from);
+		let valTo = number_format(data.to);
+		if ( wrap.find('.rangle-el__el-inp_m').hasClass('rangle-el__el-inp_m') ) {
+			valFrom += ' м';
+			valTo += ' м';
+		}
+        wrap.find('.rangle-el__min').val(valFrom);
+        wrap.find('.rangle-el__max').val(valTo);
+    },
+    onUpdate: function (data) {
+		let wrap = $(data.slider[0]).closest('.rangle-el');
+		let valFrom = number_format(data.from);
+		let valTo = number_format(data.to);
+		if ( wrap.find('.rangle-el__el-inp_m').hasClass('rangle-el__el-inp_m') ) {
+			valFrom += ' м';
+			valTo += ' м';
+		}
+        wrap.find('.rangle-el__min').val(valFrom);
+        wrap.find('.rangle-el__max').val(valTo);
+    },
+});
+$('.rangle-el__min').on('change', function(e) {
+	let wrap = $(this).closest('.rangle-el');
+	let inp = $(this);
+	wrap.find(".rangle-el__inp").data("ionRangeSlider").update({
+        from: parseInt($(this).val()),
+    });
+});
+$('.rangle-el__max').on('change', function(e) {
+	let wrap = $(this).closest('.rangle-el');
+	let inp = $(this);
+	wrap.find(".rangle-el__inp").data("ionRangeSlider").update({
+        to: parseInt($(this).val()),
+    });
+});
+// range end
+
+
+$('.sort-btns__el').on('click', function() {
+	$(this).closest('.sort-btns').find('.sort-btns__el').removeClass('active');
+	$(this).addClass('active');
+	console.log($(this).data('sort'));
+	if ( $(this).data('sort') === 'block' ) {
+		$('.block-apartments').removeClass('list');
+	}
+	if ( $(this).data('sort') === 'list' ) {
+		$('.block-apartments').addClass('list');
+	}
+});
+
+$('.modal__overlay, .modal-content__close').on('click', function() {
+	$(this).closest('.modal').fadeOut(400);
+	return false;
+});
+
+
+$('.apartments-el').on('click', function() {
+
+	$('.modal-apartments').find('.apartments-info__img').attr('src', $(this).find('.apartments-el__img').attr('src'));
+	$('.modal-apartments').find('.apartments-info__title').text($(this).data('title'));
+	$('.modal-apartments').find('#block-descrp').empty();
+	for(var i=0; i<$(this).data('descrp').length; i++){
+		let el = $(this).data('descrp')[i];
+		$('.modal-apartments').find('#block-descrp').append('<div class="block-descrp__el descrp-el">\
+			<span class="descrp-el__title">'+el['title']+'</span>\
+			<div class="descrp-el__dots"></div>\
+			<span class="descrp-el__val">'+el['val']+'</span>\
+		</div>');
+	}
+	$('.modal-apartments').find('#apartments-cost').text($(this).data('cost'));
+	$('.modal-apartments').find('#apartments-m').text($(this).data('m'));
+	$('.modal-apartments').find('#apartments-credit').text($(this).data('credit'));
+	$('#modal-apartments').fadeIn(400);
+});
+
+$('.block-call-info__btn').on('click', function() {
+	$('#modal-order').fadeIn(400);
+	return false;
+});
+
+$('.block-filter__block-top').on('click', function() {
+	let wrap = $(this).closest('.block-filter__block');
+	if ( wrap.hasClass('active') ) {
+		wrap.removeClass('active');
+		wrap.find('.block-filter__block-content').slideDown(200);
+	}else{
+		wrap.addClass('active');
+		wrap.find('.block-filter__block-content').slideUp(200);
+	}
+});
+
+
+$('[data-fancybox]').fancybox({
+	scrolling: 'yes',
+	transitionEffect: "zoom-in-out",
+});
+
+
 }); //end ready
