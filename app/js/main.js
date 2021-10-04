@@ -166,12 +166,9 @@ const swiper = new Swiper('.block-gallery-small__content', {
 });
 
 const swiper2 = new Swiper('.block-gallery', {
-  slidesPerView: 3,
-  spaceBetween: 60,
   preloadImages: false,
   lazy: true,
   centeredSlides: true,
-  initialSlide: 2,
   navigation: {
     prevEl: '.block-gallery__prev',
     nextEl: '.block-gallery__next',
@@ -196,10 +193,19 @@ const swiper2 = new Swiper('.block-gallery', {
   breakpoints: {
     // when window width is >= 320px
     0: {
-      
+  		slidesPerView: 1,
+  		initialSlide: 1,
+		spaceBetween: 13,
     },
     601: {
-      
+  		slidesPerView: 1,
+		spaceBetween: 50,
+  		initialSlide: 1,
+    },
+    1281: {
+  		initialSlide: 2,
+  		slidesPerView: 3,
+		spaceBetween: 60,
     },
   }
 });
@@ -208,7 +214,7 @@ $('.block-checks__el').on('click', function() {
 	$(this).toggleClass('active');
 });
 
-// range start
+// filter start
 function number_format( number, decimals, dec_point, thousands_sep ) {  // Format a number with grouped thousands
     var i, j, kw, kd, km;
 
@@ -248,6 +254,7 @@ $(".rangle-el__inp").ionRangeSlider({
 		}
         wrap.find('.rangle-el__min').val(valFrom);
         wrap.find('.rangle-el__max').val(valTo);
+
     },
     onUpdate: function (data) {
 		let wrap = $(data.slider[0]).closest('.rangle-el');
@@ -259,7 +266,13 @@ $(".rangle-el__inp").ionRangeSlider({
 		}
         wrap.find('.rangle-el__min').val(valFrom);
         wrap.find('.rangle-el__max').val(valTo);
+
+    	setFilter();
+
     },
+    onFinish: function(data) {
+    	setFilter();
+    }
 });
 $('.rangle-el__min').on('change', function(e) {
 	let wrap = $(this).closest('.rangle-el');
@@ -275,13 +288,189 @@ $('.rangle-el__max').on('change', function(e) {
         to: parseInt($(this).val()),
     });
 });
-// range end
+
+let filter = {
+	'rooms' : [],
+	'm_from' : null,
+	'm_to' : null,
+	'floor_from' : null,
+	'floor_to' : null,
+	'cost_from' : null,
+	'cost_to' : null,
+	'specifications' : [],
+};
+
+let rooms;
+
+$('.block-checks__el').on('click', function() {
+	rooms = [];
+	$('.block-checks__el.active').each(function(e) {
+		rooms.push($(this).text());
+	});
+	setFilter();
+});
+
+
+let specifications;
+
+
+$('#filter-specifications .checkbox-def-2__inp').on('click', function() {
+	specifications = [];
+	$('#filter-specifications .checkbox-def-2__inp').each(function() {
+		if ( $(this).prop('checked') ) {
+			let wrap = $(this).closest('.checkbox-el-2');
+			specifications.push(wrap.find('.checkbox-el-2__text').text());
+		}
+	});
+	setFilter();
+});
+
+$('#reset-filter').on('click', function() {
+	$('.block-checks__el').removeClass('active');
+	$('#filter-specifications .checkbox-def-2__inp').prop('checked', false);
+
+	$('.block-filter .rangle-el__inp').each(function() {
+	    $(this).data("ionRangeSlider").reset();
+	});
+	$('.block-apartments .block-apartments__el').fadeIn(200);
+	return false;
+});
+
+function setFilter() {
+	filter['rooms'] = rooms;
+	filter['specifications'] = specifications;
+	
+
+	filter['m_from'] = $(".rangle-el-m .rangle-el__inp").data("ionRangeSlider").result.from;
+	filter['m_to'] = $(".rangle-el-m .rangle-el__inp").data("ionRangeSlider").result.to;
+
+	filter['floor_from'] = $(".rangle-el-floor .rangle-el__inp").data("ionRangeSlider").result.from;
+	filter['floor_to'] = $(".rangle-el-floor .rangle-el__inp").data("ionRangeSlider").result.to;
+
+	filter['cost_from'] = $(".rangle-el-cost .rangle-el__inp").data("ionRangeSlider").result.from;
+	filter['cost_to'] = $(".rangle-el-cost .rangle-el__inp").data("ionRangeSlider").result.to;
+
+	console.log(filter);
+
+	$('.block-apartments .block-apartments__el').hide();
+	$('.sec-apartments__btn').hide();
+	$('.block-apartments .block-apartments__el').each(function() {
+		let rooms = parseInt($(this).data('rooms'));
+		let m = parseInt($(this).data('m'));
+		let floor = parseInt($(this).data('floor'));
+		let cost = parseInt($(this).data('cost'));
+		let specifications = $(this).data('specifications');
+
+		let filtShow = true;
+		// check rooms
+			if ( filter['rooms'] ) {
+				for(var i=0; i<filter['rooms'].length; i++){
+					if ( parseInt(filter['rooms'][i]) == rooms ) {
+						filtShow = true;
+						break;
+					}else{
+						filtShow = false;
+					}
+				}
+			}else{
+				
+			}
+
+		// check specifications
+			let check_length = 0;
+			if ( filter['specifications'] ) {
+				for(var i=0; i<filter['specifications'].length; i++){
+					for( var k=0; k<specifications.length; k++ ){
+						if ( filter['specifications'][i] === specifications[k] ) {
+							check_length++;
+						}
+					}
+				}
+				if ( check_length === filter['specifications'].length ) {
+					
+				}else{
+					filtShow = false;
+				}
+			}else{
+				
+			}
+
+		// check m
+			if ( m >= filter['m_from'] && m <= filter['m_to'] ) {
+				
+			}else{
+				filtShow = false;
+			}
+
+		// check floor
+			if ( floor >= filter['floor_from'] && floor <= filter['floor_to'] ) {
+				
+			}else{
+				filtShow = false;
+			}
+
+		// check cost
+			if ( cost >= filter['cost_from'] && cost <= filter['cost_to'] ) {
+				
+			}else{
+				filtShow = false;
+			}
+
+		if ( filtShow ) {
+			$(this).fadeIn(200);
+		}
+	});
+}
+
+$('.sec-apartments__btn').on('click', function() {
+	$('.block-apartments__el').fadeIn(200);
+	$(this).hide();
+	return false;
+});
+
+$('.sort-block__el').on('click', function() {
+	let wrap = $(this).closest('.sort-block');
+	if ( $(this).hasClass('active') ) {
+	}else{
+		wrap.find('.sort-block__el').removeClass('active');
+		$(this).addClass('active');
+		$('.block-apartments').hide();
+		$('.block-apartments').fadeIn(600);
+		if ( $(this).data('sort') === 'cost' ) {
+			let elements = $('.block-apartments__el');
+			elements.sort(function (a, b) {
+				var contentA =parseInt( $(a).data('cost'));
+				var contentB =parseInt( $(b).data('cost'));
+				return (contentA < contentB) ? -1 : (contentA > contentB) ? 1 : 0;
+			});
+			for(var i=0; i<elements.length; i++){
+				$(elements[i]).css({
+					'order': i,
+				});
+			}
+		}
+		if ( $(this).data('sort') === 'm' ) {
+			let elements = $('.block-apartments__el');
+			elements.sort(function (a, b) {
+				var contentA =parseInt( $(a).data('m'));
+				var contentB =parseInt( $(b).data('m'));
+				return (contentA < contentB) ? -1 : (contentA > contentB) ? 1 : 0;
+			});
+			for(var i=0; i<elements.length; i++){
+				$(elements[i]).css({
+					'order': i,
+				});
+			}
+		}
+	}
+});
+
+// filter end
 
 
 $('.sort-btns__el').on('click', function() {
 	$(this).closest('.sort-btns').find('.sort-btns__el').removeClass('active');
 	$(this).addClass('active');
-	console.log($(this).data('sort'));
 	if ( $(this).data('sort') === 'block' ) {
 		$('.block-apartments').removeClass('list');
 	}
@@ -331,10 +520,23 @@ $('.block-filter__block-top').on('click', function() {
 	}
 });
 
-
 $('[data-fancybox]').fancybox({
 	scrolling: 'yes',
 	transitionEffect: "zoom-in-out",
+});
+
+$('.block-filter__top, .block-filter__btnHide').on('click', function() {
+	let wrap = $(this).closest('.block-filter');
+	if ( $(window).width() <= 1280 ) {
+		if ( wrap.hasClass('open') ) {
+			wrap.removeClass('open');
+			wrap.find('.block-filter__body').fadeOut(200);
+		}else{
+			wrap.addClass('open');
+			wrap.find('.block-filter__body').fadeIn(200);
+		}
+	}
+	return false;
 });
 
 
