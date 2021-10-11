@@ -540,4 +540,110 @@ $('.block-filter__top, .block-filter__btnHide').on('click', function() {
 });
 
 
+$('.tabs-def__el').on('click', function() {
+	var wrap = $(this).closest('.wrap-tabs');
+	if ( $(this).hasClass('active') ) {
+
+	}else{
+		$(this).closest('.tabs-def').find('.tabs-def__el').removeClass('active');
+		$(this).addClass('active');
+		wrap.find('.wrap-tabs__content-el').hide();
+		wrap.find('.wrap-tabs__content-el').eq($(this).index()).fadeIn(400);
+	}
+	return false;
+});
+
+$('.nav-dev__next').on('click', function() {
+	var wrap = $(this).closest('.wrap-tabs');
+	if ( wrap.find('.tabs-def__el.active').next('.tabs-def__el').length ) {
+		wrap.find('.tabs-def__el.active').next('.tabs-def__el').click();
+	}else{
+		wrap.find('.tabs-def__el').eq(0).click();
+	}
+	return false;
+});
+$('.nav-dev__prev').on('click', function() {
+	var wrap = $(this).closest('.wrap-tabs');
+	if ( wrap.find('.tabs-def__el.active').prev('.tabs-def__el').length ) {
+		wrap.find('.tabs-def__el.active').prev('.tabs-def__el').click();
+	}else{
+		wrap.find('.tabs-def__el').eq(wrap.find('.tabs-def__el').length-1).click();
+	}
+	return false;
+});
+const swiperTabs = new Swiper('.tabs-def-wrap', {
+  slidesPerView: 'auto',
+  navigation: {
+    prevEl: '.tabs-prev',
+    nextEl: '.tabs-next',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    0: {
+      
+    },
+    601: {
+      slidesPerView: 5,
+    },
+  }
+});
+
+
+// calc start
+$(".calc-el__range-inp").ionRangeSlider({
+	onChange: function (data) {
+    	let wrap = $(data.slider[0]).closest('.rangle-el');
+    	wrap.closest('.calc-el').find('.calc-el__inp').val(data.from_pretty +' ' +wrap.find('.calc-el__range-inp').data('postfix'));
+    },
+    onUpdate: function (data) {
+    	let wrap = $(data.slider[0]).closest('.rangle-el');
+    	wrap.closest('.calc-el').find('.calc-el__inp').val(data.from_pretty +' ' +wrap.find('.calc-el__range-inp').data('postfix'));
+    },
+    onFinish: function(data) {
+    	set_calc();
+    }
+});
+
+
+function set_calc() {
+	let cost = $('#calc-cost').val();
+	let first = $('#calc-first').val();
+	let year = $('#calc-year').val();
+	let income = $('#calc-income').val();
+
+	let procent = parseInt(first*100/cost);
+	let credit = parseInt(cost-first);
+
+	$('#calc-procent').text(procent);
+	$('#text-cost').text(number_format(credit));
+	$('#text-payment').text(number_format(income));
+
+	$('.bank-procent').each(function() {
+		var wrap = $(this).closest('.table-def__tr');
+		var cost = (((credit*parseFloat($(this).text()))/100) + credit) / (year*12);
+		wrap.find('.bank-first').text(first);
+		wrap.find('.bank-payment').text( parseInt(cost) );
+	});
+}
+
+$('.calc-el__inp').on('change', function(e) {
+	let wrap = $(this).closest('.calc-el');
+	let inp = $(this);
+	wrap.find(".calc-el__range-inp").data("ionRangeSlider").update({
+        from: parseInt($(this).val()),
+    });
+});
+$('.block-calc__btn').on('click', function() {
+	$('.sec-calc__bottom').fadeIn(400);
+	return false;
+});
+$('.sec-calc__bottom-btn').on('click', function() {
+	$('.table-def__tr').addClass('active');
+	$(this).hide();
+	return false;
+});
+// calc end
+
+
+
 }); //end ready

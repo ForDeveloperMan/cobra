@@ -17,3 +17,7 @@
 		transform: rotate(360deg);
 	}
 }
+
+@mixin bg{
+	background-color: rgba(255, 184, 145, 0.08);
+}
