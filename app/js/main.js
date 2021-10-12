@@ -98,6 +98,12 @@ function showMap() {
     }
 }
 
+if ( $(window).width() <= 600 ) {
+	$('.table-def__cell').each(function() {
+		$(this).wrap('<div class="table-def__wrap">');
+	});
+}
+
 $('.mapbtn, .sec-header__map-btn, .sec-header__mapbtn-mob').on('click', function() {
   var wrap = $('.sec-header');
   if ( wrap.hasClass('sec-header_openmap') ) {
@@ -571,22 +577,24 @@ $('.nav-dev__prev').on('click', function() {
 	}
 	return false;
 });
-const swiperTabs = new Swiper('.tabs-def-wrap', {
-  slidesPerView: 'auto',
-  navigation: {
-    prevEl: '.tabs-prev',
-    nextEl: '.tabs-next',
-  },
-  breakpoints: {
-    // when window width is >= 320px
-    0: {
-      
-    },
-    601: {
-      slidesPerView: 5,
-    },
-  }
-});
+if ( $(window).width() > 1280 ) {
+	const swiperTabs = new Swiper('.tabs-def-wrap', {
+	  slidesPerView: 'auto',
+	  navigation: {
+	    prevEl: '.tabs-prev',
+	    nextEl: '.tabs-next',
+	  },
+	  breakpoints: {
+	    // when window width is >= 320px
+	    0: {
+	  		slidesPerView: 4,
+	    },
+	    1650: {
+	      slidesPerView: 5,
+	    },
+	  }
+	});
+}
 
 
 // calc start
