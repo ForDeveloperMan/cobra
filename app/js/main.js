@@ -653,5 +653,15 @@ $('.sec-calc__bottom-btn').on('click', function() {
 // calc end
 
 
+const swiperVideo = new Swiper('.block-slider-video', {
+	  slidesPerView: 1,
+	  navigation: {
+	    prevEl: '.block-slider-video__prev',
+	    nextEl: '.block-slider-video__next',
+	  },
+	  breakpoints: {
+	  }
+	});
+
 
 }); //end ready
