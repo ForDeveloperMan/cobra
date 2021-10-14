@@ -412,6 +412,7 @@ a{
 
 .checkbox-el{
 	display: flex;
+	align-items: center;
 	&__dec{
 		
 	}
@@ -832,6 +833,7 @@ a{
 		width: 100%;
 		height: 450px;
 		object-fit: cover;
+		background-color: gray;
 	}
 	position: relative;
 	&__nav{
@@ -912,9 +914,11 @@ a{
 }
 
 .rangle-el{
+	min-height: 2px;
 	&__content{
 		display: flex;
 		justify-content: space-between;
+		margin-bottom: 21px;
 	}
 	&__el{
 		width: 48%;
@@ -944,11 +948,10 @@ a{
 		margin-top: 5px;
 	}
 	&__inp{
-		display: none;
+		height: 2px;
 	}
 	.irs--flat{
 		height: 2px;
-		margin-top: 21px;
 		.irs{}
 		.irs-line{
 			height: 2px;
@@ -1491,25 +1494,25 @@ a{
 .block-map{
 	width: 100%;
 	height: 455px;
+	.gm-style-iw{
+		padding: 0 !important;
+		background-color: transparent !important;
+		transform: translateX(-32px) translateY(8px) !important;
+		box-shadow: none !important;
+	}
+	button.gm-ui-hover-effect{
+		display: none !important;
+	}
+	.gm-style .gm-style-iw-t::after{
+		display: none;
+	}
+
+	.gm-style-iw-d{
+		overflow: hidden !important;
+		max-height: none !important;
+	}
 }
 
-.gm-style-iw{
-	padding: 0 !important;
-	background-color: transparent !important;
-	transform: translateX(-32px) translateY(8px) !important;
-	box-shadow: none !important;
-}
-button.gm-ui-hover-effect{
-	display: none !important;
-}
-.gm-style .gm-style-iw-t::after{
-	display: none;
-}
-
-.gm-style-iw-d{
-	overflow: hidden !important;
-	max-height: none !important;
-}
 
 .map-info{
 	background: #FFFFFF;
@@ -2077,6 +2080,9 @@ button.gm-ui-hover-effect{
 	display: flex;
 	&__el{
 		width: 33.333333%;
+		.credit-el{
+			height: 100%;
+		}
 	}
 }
 
@@ -2090,6 +2096,7 @@ button.gm-ui-hover-effect{
 	&__content{
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
 		&-el{
 			width: 35.6%;
 		}
@@ -2099,6 +2106,7 @@ button.gm-ui-hover-effect{
 	}
 	&__checkbox{
 		margin-top: 20px;
+		width: 100%;
 		align-items: center;
 	}
 }

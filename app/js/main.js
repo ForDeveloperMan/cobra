@@ -53,6 +53,82 @@ function getScrollBarWidth(){
 
 $(".inpTel").mask("+7(999) 999-99-99");
 
+
+function setMapDef(mapBlock) {
+  const uluru = { lat: 55.75699645963315, lng: 37.61750863348657 };
+  var locations = [
+	  ['Офис', 55.75699645963315, 37.61750863348657, '../img/map/pin.svg'],
+	];
+  const map = new google.maps.Map(document.getElementById(mapBlock), {
+    zoom: 14,
+    center: uluru,
+    styles: [
+	  {
+	    "featureType": "administrative.land_parcel",
+	    "elementType": "labels",
+	    "stylers": [
+	      {
+	        "visibility": "off"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "poi",
+	    "elementType": "labels.text",
+	    "stylers": [
+	      {
+	        "visibility": "off"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "poi.business",
+	    "stylers": [
+	      {
+	        "visibility": "off"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "poi.park",
+	    "elementType": "labels.text",
+	    "stylers": [
+	      {
+	        "visibility": "off"
+	      }
+	    ]
+	  },
+	  {
+	    "featureType": "road.local",
+	    "elementType": "labels",
+	    "stylers": [
+	      {
+	        "visibility": "off"
+	      }
+	    ]
+	  }
+	]
+  });
+
+  	var infowindow = new google.maps.InfoWindow();
+  	var marker, i;
+	for (i = 0; i < locations.length; i++) {  
+		marker = new google.maps.Marker({
+			map: map,
+			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+			icon: locations[i][3],
+		});
+		google.maps.event.addListener(marker, 'click', (function(marker, i) {
+			return function() {
+			  let content = locations[i][0];
+			  infowindow.setContent(content);
+			  infowindow.open(map, marker);
+			}
+		})(marker, i));
+	}
+}
+
+
 function closeMap() {
     $('.sec-header').removeClass('sec-header_openmap');
     $('.sec-header__map').removeClass('active');
@@ -77,8 +153,7 @@ function showMap() {
     $('.sec-header').addClass('sec-header_openmap');
     $('.sec-header__map').addClass('active');
     if ( !($('.sec-header__map-iframe').hasClass('active')) ) {
-      $('.sec-header__map-iframe').addClass('active');
-      $('.sec-header__map-iframe').attr('src', $('.sec-header__map-iframe').data('src'));
+      setMapDef('map-def');
     }
     $('.sec-header_3__content').addClass('active');
     $('.sec-header__formMap').fadeIn(200);
@@ -96,6 +171,23 @@ function showMap() {
         $('.sec-header__mob-form-map').fadeIn(200);
       }
     }
+}
+
+let mapContact = false;
+
+$(window).scroll(function() {
+	if ( ( $(window).scrollTop() + $(window).height() ) >= $('.sec-contact').offset().top ) {
+		if ( !mapContact ) {
+			mapContact = true;
+			setMapDef('map-contact');
+		}
+	}
+});
+if ( ( $(window).scrollTop() + $(window).height() ) >= $('.sec-contact').offset().top ) {
+	if ( !mapContact ) {
+		mapContact = true;
+		setMapDef('map-contact');
+	}
 }
 
 if ( $(window).width() <= 600 ) {
@@ -186,7 +278,7 @@ const swiper2 = new Swiper('.block-gallery', {
     init: function (e) {
       $('.block-gallery__count-from').text(e.realIndex+1);
       $('.block-gallery__count-to').text(e.slides.length);
-      setTimeout(s, 150);
+      setTimeout(s, 350);
       function s() {
       	$('.block-gallery').addClass('active');
       }
@@ -487,6 +579,7 @@ $('.sort-btns__el').on('click', function() {
 
 $('.modal__overlay, .modal-content__close').on('click', function() {
 	$(this).closest('.modal').fadeOut(400);
+	unsetNoscroll();
 	return false;
 });
 
@@ -654,14 +747,25 @@ $('.sec-calc__bottom-btn').on('click', function() {
 
 
 const swiperVideo = new Swiper('.block-slider-video', {
-	  slidesPerView: 1,
-	  navigation: {
-	    prevEl: '.block-slider-video__prev',
-	    nextEl: '.block-slider-video__next',
-	  },
-	  breakpoints: {
-	  }
-	});
+  slidesPerView: 1,
+  navigation: {
+    prevEl: '.block-slider-video__prev',
+    nextEl: '.block-slider-video__next',
+  },
+  breakpoints: {
+  }
+});
 
+$('.btnOpen').on('click', function() {
+	$($(this).data('open')).fadeIn(400);
+	setNoscroll();
+	return false;
+});
+
+initMap();
+
+if ( $(window).width() <= 600 ) {
+	$('.footer__bottom-content').append($('.footer__text-mob'));
+}
 
 }); //end ready

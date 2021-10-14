@@ -21,6 +21,7 @@ body{
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
+	z-index: 10;
 	overflow-x: hidden;
 	&::after{
 		content: '';
@@ -28,7 +29,8 @@ body{
 		top: 0;
 		width: 1px;
 		height: 100%;
-		background: rgba(255, 255, 255, 0.1);
+		background: rgba(#FFB891, 0.15);
+	    mix-blend-mode: luminosity;
 		right: 135px;
 		pointer-events: none;
 		z-index: 500;
@@ -39,7 +41,8 @@ body{
 		top: 0;
 		width: 1px;
 		height: 100%;
-		background: rgba(255, 255, 255, 0.1);
+		background: rgba(#FFB891, 0.1);
+	    mix-blend-mode: luminosity;
 		left: 135px;
 		pointer-events: none;
 		z-index: 500;
@@ -710,6 +713,30 @@ body{
 	}
 }
 
+.sec-bg-dec{
+	position: relative;
+	&::after{
+		content: '';
+	    position: absolute;
+	    top: 158px;
+	    right: 135px;
+	    width: 1px;
+	    background: #080A0F;
+	    height: 30px;
+	    z-index: 500;
+	}
+	&::before{
+		content: '';
+	    position: absolute;
+	    bottom: 457px;
+	    left: 135px;
+	    width: 1px;
+	    background: #080A0F;
+	    height: 30px;
+	    z-index: 500;
+	}
+}
+
 .sec-calc{
 	position: relative;
 	&::after{
@@ -757,6 +784,13 @@ body{
 .sec-documents{
 	background: url('../img/bg/sec-doc.jpg') no-repeat top / cover;
 	background-color: #080A0F;
+	@include bg_dec;
+	&::after{
+		top: 121px;
+	}
+	&::before{
+		bottom: 51px;
+	}
 	&__wrap{
 		padding: 108px 0;
 	}
@@ -769,6 +803,13 @@ body{
 }
 
 .sec-know{
+	@include bg_dec;
+	&::after{
+		top: 121px;
+	}
+	&::before{
+		bottom: 306px;
+	}
 	&__wrap{
 		padding: 109px 0;
 	}
@@ -791,6 +832,13 @@ body{
 .sec-info-4{
 	background: url('../img/bg/sec-info4.jpg') no-repeat top / cover;
 	background-color: #080A0F;
+	@include bg_dec;
+	&::after{
+		top: 121px;
+	}
+	&::before{
+		bottom: 368px;
+	}
 	&__wrap{
 		padding: 110px 0;
 	}
@@ -820,6 +868,12 @@ body{
 	@include bg;
 	position: relative;
 	overflow-x: hidden;
+	&::after{
+		top: 200px;
+	}
+	&::before{
+		bottom: 294px;
+	}
 	&__bgtext{
 		position: absolute;
 		top: 60%;
@@ -852,6 +906,13 @@ body{
 
 .sec-contact{
 	background: #FFFFFF;
+	@include bg_dec;
+	&::after{
+		top: 119px;
+	}
+	&::before{
+		bottom: 64px;
+	}
 	&__wrap{
 		padding: 108px 0;
 	}
