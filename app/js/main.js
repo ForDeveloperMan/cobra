@@ -688,8 +688,7 @@ if ( $(window).width() > 1280 ) {
 	  }
 	});
 }
-
-
+123
 // calc start
 $(".calc-el__range-inp").ionRangeSlider({
 	onChange: function (data) {
