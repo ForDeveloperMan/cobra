@@ -28,7 +28,7 @@
 }
 
 @media screen and (max-width: 1645px){
-	.container{
+	.container:not(.container_header){
 		max-width: 1200px;
 	}
 	.sec-header__left{
@@ -65,14 +65,16 @@
 		max-width: 600px;
 	}
 
-	.sec-header_5__bottom{
-		display: block;
-		&-left{
-			width: 100%;
-			margin-bottom: 20px;
-		}
-		&-right{
-			width: 100%;
+	.sec-header:not(.sec-header_w){
+		.sec-header_5__bottom{
+			display: block;
+			&-left{
+				width: 100%;
+				margin-bottom: 20px;
+			}
+			&-right{
+				width: 100%;
+			}
 		}
 	}
 	.block-date{
@@ -188,6 +190,18 @@
 
 // 768
 @media screen and (max-width: 1280px){
+	.sec-header.sec-header_w{
+		.sec-header_5__bottom{
+			display: block;
+			&-left{
+				width: 100%;
+				margin-bottom: 20px;
+			}
+			&-right{
+				width: 100%;
+			}
+		}
+	}
 	.sec-header_3__content.active{
 		max-width: 100%;
 	}

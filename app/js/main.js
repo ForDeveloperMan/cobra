@@ -175,20 +175,23 @@ function showMap() {
 
 let mapContact = false;
 
-$(window).scroll(function() {
-	if ( ( $(window).scrollTop() + $(window).height() ) >= $('.sec-contact').offset().top ) {
-		if ( !mapContact ) {
-			mapContact = true;
-			setMapDef('map-contact');
+if ( $('.sec-contact').length ) {
+	$(window).scroll(function() {
+		if ( ( $(window).scrollTop() + $(window).height() ) >= $('.sec-contact').offset().top ) {
+			if ( !mapContact ) {
+				mapContact = true;
+				setMapDef('map-contact');
+			}
 		}
-	}
-});
+	});
 if ( ( $(window).scrollTop() + $(window).height() ) >= $('.sec-contact').offset().top ) {
 	if ( !mapContact ) {
 		mapContact = true;
 		setMapDef('map-contact');
 	}
 }
+}
+
 
 if ( $(window).width() <= 600 ) {
 	$('.table-def__cell').each(function() {
@@ -240,6 +243,10 @@ $( ".inpDate, .block-date" ).datepicker({
 
 
 
+let slidesPerView = 2;
+if ( $('.sec-header_w_5').length ) {
+	slidesPerView = 1;
+}
 
 const swiper = new Swiper('.block-gallery-small__content', {
   slidesPerView: 'auto',
@@ -257,7 +264,7 @@ const swiper = new Swiper('.block-gallery-small__content', {
       spaceBetween: 0,
     },
     601: {
-      slidesPerView: 2,
+      slidesPerView: slidesPerView,
       spaceBetween: 20
     },
   }
@@ -761,10 +768,10 @@ $('.btnOpen').on('click', function() {
 	return false;
 });
 
-initMap();
 
 if ( $(window).width() <= 600 ) {
 	$('.footer__bottom-content').append($('.footer__text-mob'));
 }
+initMap();
 
 }); //end ready

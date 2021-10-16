@@ -59,6 +59,10 @@ body{
 	z-index: 10;
 }
 
+.container_header{
+	max-width: 1161px;
+}
+
 .top-menu{
 	position: absolute;
 	top: 0;
@@ -438,6 +442,380 @@ body{
 .sec-header__form-img{
 	display: none;
 }
+
+@media screen and (min-width: 1281px){
+	.sec-header_w{
+		.sec-header__mapbtn-mob{
+			display: none;
+		}
+		.sec-header__mapbtn{
+			display: flex;
+			transform: none;
+			top: auto;
+			bottom: 11px;
+		}
+		.mapbtn__right{
+			padding-left: 24px;
+		}
+		.sec-header__map {
+		    max-width: 512px;
+		}
+		.sec-header__img_1{
+			max-width: 622px;
+			top: 159px;
+			right: 54px;
+		}
+		.sec-header_2__left{
+			margin-left: 20px;
+			max-width: 635px;
+			margin-top: 135px;
+		}
+		.title_main{
+			font-size: 34px;
+		}
+		.text-line{
+			padding-left: 74px;
+			line-height: 1.5;
+			&::after{
+				width: 48px;
+			}
+		}
+		.title_med{
+			font-size: 22px;
+		}
+		.sec-header_2__title{
+			max-width: 599px;
+		}
+		.sec-header_2__text{
+			max-width: 544px;
+		}
+		.block-form-2{
+			padding: 36px 48px;
+		}
+		.block-form-2__title{
+			margin-bottom: 24px;
+		}
+		.sec-header_3__wrap{
+			padding-top: 187px;
+		}
+		.sec-header_3__content{
+			max-width: 917px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.sec-header_3__title {
+		    margin-bottom: 43px;
+		}
+		.block-form-3__img{
+			max-width: 567px;
+			top: -117px;
+		}
+		.sec-header_3__form{
+			margin-top: 167px;
+		}
+		.sec-header_3__wrap{
+			padding-bottom: 100px;
+		}
+		.sec-header_4__wrap{
+			padding-top: 236px;
+		}
+		.sec-header_4__left{
+			margin-left: 20px;
+			max-width: 635px;
+		}
+		.sec-header_4__text{
+			max-width: 561px;
+		}
+		.sec-header_4__form {
+		    margin-top: 66px;
+		}
+		.sec-header_4__img{
+			max-width: 928px;
+    		right: -172px;
+		}
+		.sec-header_5__bottom-left{
+			padding: 0;
+		}
+		.sec-header_5__content{
+			margin-left: auto;
+			margin-right: auto;
+			max-width: 1108px;
+		}
+		.sec-header_5__bottom-right{
+			max-width: 349px;
+		}
+		.sec-header_5__bottom{
+			margin-top: 96px;
+		}
+		.sec-header_5__bottom-left{
+			width: 66%;
+		}
+		&_1{
+			.sec-header__wrap{
+				padding-top: 255px;
+			}
+			.sec-header__left{
+				margin-left: 20px;
+				margin-top: 48px;
+			}
+			.sec-header__left{
+				max-width: 568px;
+			}
+			.sec-header__title{
+				margin-bottom: 44px;
+			}
+			.sec-header__right{
+				max-width: 446px;
+				.block-form__img{
+					top: -143px;
+					max-width: 379px;
+				}
+			}
+			.info-el__title{
+				margin-bottom: 22px;
+			}
+			&.sec-header_openmap{
+				.sec-header__wrap{
+					padding-top: 153px;
+				}
+				.sec-header__left{
+					max-width: 635px;
+				}
+				.sec-header__formMap{
+					margin-top: 63px;
+				}
+				.block-form-2__img{
+					right: 37px;
+					max-width: 340px;
+					top: -27px;
+				}
+				.sec-header__title, .text-line{
+					max-width: 557px;
+				}
+				.block-form-2{
+					padding: 37px 48px;
+				}
+				.block-form-2__title{
+					max-width: 283px;
+				}
+				.form-el__inp{
+					height: 53px;
+				}
+				.btn.block-form-2__content-el{
+					padding-left: 10px;
+					padding-right: 10px;
+					letter-spacing: 0;
+					height: 53px;
+				}
+				.form-el__icon{
+					left: 17px;
+				}
+				.inp{
+					padding: 0 20 0 36px;
+				}
+				.block-form-2__checkbox {
+				    margin-top: 22px;
+				}
+				.checkbox-def{
+					width: 24px;
+					height: 24px;
+				}
+				.block-form-2__content-el{
+					width: 48%;
+				}
+				.btn svg{
+					max-width: 12px;
+				}
+			}
+		}
+		&_2{
+			.form-el__inp{
+				height: 53px;
+			}
+			.btn.block-form-2__content-el{
+				padding-left: 10px;
+				padding-right: 10px;
+				letter-spacing: 0;
+				height: 53px;
+			}
+			.form-el__icon{
+				left: 17px;
+			}
+			.inp{
+				padding: 0 20px 0 36px;
+			}
+			.block-form-2__checkbox {
+			    margin-top: 22px;
+			}
+			.checkbox-def{
+				width: 24px;
+				height: 24px;
+			}
+			.block-form-2__content-el{
+				width: 48%;
+			}
+			.btn svg{
+				max-width: 12px;
+			}
+		}
+		&_3{
+			.btn svg{
+				max-width: 12px;
+			}
+			.form-el__icon{
+				left: 17px;
+			}
+			.inp{
+				padding: 0 20px 0 36px;
+			}
+			.block-form-2__checkbox {
+			    margin-top: 22px;
+			}
+			.checkbox-def{
+				width: 24px;
+				height: 24px;
+			}
+			.form-el__inp{
+				height: 53px;
+			}
+			.block-form-3__content-btn{
+				padding-left: 10px;
+				padding-right: 10px;
+				letter-spacing: 0;
+				height: 53px;
+			}
+			.block-form-3{
+				padding: 114px 55px 62px 72px;
+			}
+			.block-form-3__content-btn {
+			    width: 33%;
+			}
+			.block-form-3__content-inp {
+			    width: 64%;
+			}
+			.block-form-3__checkbox {
+			    margin-top: 32px;
+			}
+			&.sec-header_openmap{
+				.sec-header_3__content.active{
+					margin-left: 0;
+					margin-top: 14px;
+					margin-left: 20px;
+					max-width: 637px;
+				}
+				.sec-header_3__title{
+					max-width: 600px;
+					margin-bottom: 41px;
+				}
+				.sec-header_3__text{
+					padding-left: 70px;
+					line-height: 1.5;
+					max-width: 556px;
+				}
+				.sec-header_3__form{
+					margin-top: 67px;
+				}
+				.block-form-3__img{
+					max-width: 340px;
+					top: -29px;
+				}
+			}
+		}
+		&_4{
+			.block-form-2{
+				padding: 47px 48px;
+			}
+			.form-el__inp{
+				height: 53px;
+			}
+			.btn.block-form-2__content-el{
+				padding-left: 10px;
+				padding-right: 10px;
+				letter-spacing: 0;
+				height: 53px;
+			}
+			.form-el__icon{
+				left: 17px;
+			}
+			.inp{
+				padding: 0 20px 0 36px;
+			}
+			.block-form-2__checkbox {
+			    margin-top: 22px;
+			}
+			.checkbox-def{
+				width: 24px;
+				height: 24px;
+			}
+			.block-form-2__content-el{
+				width: 48%;
+			}
+			.btn svg{
+				max-width: 12px;
+			}
+
+			.form-el__inp.inpDate{
+				padding: 0 52px;
+			}
+			.block-form-2__content-el:last-child{
+				.form-el__icon{
+					left: 24px;
+				}
+			}
+			.btn{
+				letter-spacing: 0;
+			}
+			.sec-header__img2{
+			    max-width: 701px;
+			    right: -70px;
+			}
+		}
+		&_5{
+			.block-form-4__el{
+				width: 52%;
+			}
+			.block-form-4__el:last-child{
+				width: 48%;
+				padding: 37px 37px;
+				padding-bottom: 0;
+			}
+			.ui-datepicker-inline{
+				width: 100%;
+			}
+			.ui-datepicker{
+				padding: 38px 15px 33px;
+			}
+			.form-el__inp{
+				height: 53px;
+			}
+			.form-el__icon{
+				left: 17px;
+			}
+			.inp{
+				padding: 0 20px 0 36px;
+			}
+			.block-form-4__inp{
+				margin-bottom: 16px;
+			}
+			.checkbox-def{
+				width: 24px;
+				height: 24px;
+			}
+			.checkbox-el__text{
+				margin-left: 12px;
+			}
+			.block-form-4__btn{
+				margin-top: 24px;
+				letter-spacing: 0;
+				padding: 19px 20px;
+			}
+			.gallery-small-el__img{
+				height: 280px;
+			}
+		}
+	}
+}
+
 
 .sec-gallery{
 	position: relative;
