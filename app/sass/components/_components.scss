@@ -305,8 +305,11 @@ a{
 		font-weight: 500;
 		font-size: 12px;
 		letter-spacing: 0.1em;
-		text-transform: uppercase;
 		color: #080A0F;
+	}
+	text-transform: capitalize;
+	&::placeholder{
+		text-transform: uppercase;
 	}
 }
 
@@ -2004,6 +2007,12 @@ a{
 		text-decoration-line: underline;
 		text-transform: uppercase;
 		color: #080A0F;
+	}
+	&__hide{
+		display: none;
+	}
+	&__more{
+		cursor: pointer;
 	}
 }
 

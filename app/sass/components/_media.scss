@@ -1689,6 +1689,14 @@
 	.apartments-el__img{
 		width: 100%;
 	}
+	.wrap-tabs__content-el{
+		// width: 100%;
+		display: block !important;
+	}
+	.wrap-tabs__content{
+		padding: 0 15px !important;
+		box-sizing: border-box;
+	}
 }
 
 @media screen and (max-width: 650px){
@@ -2486,11 +2494,16 @@
 	.sec-calc__wrap{
 		padding: 44px 0;
 	}
+	.block-calc{
+		background-color: transparent;
+	}
 	.block-calc__content{
-		padding: 33px 13px;
-		padding-top: 0;
+		padding: 0;
+		border: 0;
+	}
+	.block-calc__wrap{
+		padding: 15px 13px;
 		border: 1px solid rgba(255, 184, 145, 0.3);
-		padding-bottom: 0;
 		background-color: #fff;
 	}
 	.block-calc__title{
@@ -2508,6 +2521,9 @@
 	}
 	.block-calc__content-el{
 		width: 100%;
+		&:last-child{
+			margin-bottom: 0;
+		}
 	}
 	.block-calc__content{
 		margin-top: 40px;
@@ -2641,8 +2657,8 @@
 	.sec-calc{
 		padding: 0 15px;
 	}
-	.sec-calc__bottom{
-		margin-bottom: 30px;
+	.block-info-2{
+		margin-top: 30px;
 	}
 	.block-info-2{
 		text-align: left;
@@ -3013,5 +3029,15 @@
 	}
 	.sec-contact__left{
 		max-width: 100%;
+	}
+
+
+	.locate-info-el, .credit-el{
+		border-bottom-width: 0;
+	}
+	.block-locate__el:last-child, .block-credit__el:last-child{
+		.locate-info-el, .credit-el{
+			border-bottom-width: 1px;
+		}
 	}
 }

@@ -60,7 +60,7 @@ body{
 }
 
 .container_header{
-	max-width: 1161px;
+	max-width: 1338px;
 }
 
 .top-menu{
@@ -450,9 +450,6 @@ body{
 		}
 		.sec-header__mapbtn{
 			display: flex;
-			transform: none;
-			top: auto;
-			bottom: 11px;
 		}
 		.mapbtn__right{
 			padding-left: 24px;
@@ -461,14 +458,14 @@ body{
 		    max-width: 512px;
 		}
 		.sec-header__img_1{
-			max-width: 622px;
-			top: 159px;
-			right: 54px;
+			max-width: 790px;
+		    top: 130px;
+    		right: 306px;
 		}
 		.sec-header_2__left{
-			margin-left: 20px;
+			margin-left: 0px;
 			max-width: 635px;
-			margin-top: 135px;
+			margin-top: 112px;
 		}
 		.title_main{
 			font-size: 34px;
@@ -495,67 +492,43 @@ body{
 		.block-form-2__title{
 			margin-bottom: 24px;
 		}
-		.sec-header_3__wrap{
-			padding-top: 187px;
+
+		.sec-header_4__img{
+			max-width: 1064px;
 		}
-		.sec-header_3__content{
-			max-width: 917px;
-			margin-left: auto;
-			margin-right: auto;
-		}
-		.sec-header_3__title {
-		    margin-bottom: 43px;
-		}
-		.block-form-3__img{
-			max-width: 567px;
-			top: -117px;
-		}
-		.sec-header_3__form{
-			margin-top: 167px;
-		}
-		.sec-header_3__wrap{
-			padding-bottom: 100px;
-		}
-		.sec-header_4__wrap{
-			padding-top: 236px;
-		}
-		.sec-header_4__left{
-			margin-left: 20px;
-			max-width: 635px;
-		}
-		.sec-header_4__text{
-			max-width: 561px;
+		.sec-header_4__left {
+		    max-width: 635px;
 		}
 		.sec-header_4__form {
-		    margin-top: 66px;
+		    margin-top: 70px;
 		}
-		.sec-header_4__img{
-			max-width: 928px;
-    		right: -172px;
-		}
+		
 		.sec-header_5__bottom-left{
 			padding: 0;
 		}
 		.sec-header_5__content{
 			margin-left: auto;
 			margin-right: auto;
-			max-width: 1108px;
+			max-width: 1305px;
 		}
 		.sec-header_5__bottom-right{
-			max-width: 349px;
+			max-width: 557px;
 		}
 		.sec-header_5__bottom{
-			margin-top: 96px;
+			margin-top: 119px;
 		}
 		.sec-header_5__bottom-left{
-			width: 66%;
+			width: 55%;
+		}
+		.sec-header_5__wrap{
+			padding-top: 153px;
 		}
 		&_1{
 			.sec-header__wrap{
 				padding-top: 255px;
 			}
 			.sec-header__left{
-				margin-left: 20px;
+				margin-left: 0px;
 				margin-top: 48px;
 			}
 			.sec-header__left{
@@ -573,6 +546,9 @@ body{
 			}
 			.info-el__title{
 				margin-bottom: 22px;
+			}
+			.sec-header__bottom {
+			    margin-top: 90px;
 			}
 			&.sec-header_openmap{
 				.sec-header__wrap{
@@ -765,10 +741,7 @@ body{
 			.btn{
 				letter-spacing: 0;
 			}
-			.sec-header__img2{
-			    max-width: 701px;
-			    right: -70px;
-			}
+			
 		}
 		&_5{
 			.block-form-4__el{
@@ -812,6 +785,85 @@ body{
 			.gallery-small-el__img{
 				height: 280px;
 			}
+		}
+	}
+}
+@media screen and (min-width: 1281px) and (max-width: 1550px){
+	.container_header{
+		max-width: 1162px;
+	}
+	.sec-header_w_1 .sec-header__left{
+		margin-left: 20px;
+	}
+	.sec-header_w_1 .sec-header__bottom {
+	    margin-top: 72px;
+	}
+	.sec-header__mapbtn{
+		display: flex;
+		transform: none;
+		top: auto;
+		bottom: 11px;
+	}
+	.sec-header_w .sec-header__img_1{
+		max-width: 622px;
+		top: 159px;
+		right: 54px;
+	}
+	.sec-header_w{
+		.sec-header_3__wrap{
+			padding-top: 187px;
+		}
+		.sec-header_3__content{
+			max-width: 917px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.sec-header_3__title {
+		    margin-bottom: 43px;
+		}
+		.block-form-3__img{
+			max-width: 567px;
+			top: -117px;
+		}
+		.sec-header_3__form{
+			margin-top: 167px;
+		}
+		.sec-header_3__wrap{
+			padding-bottom: 100px;
+		}
+		.sec-header_4__wrap{
+			padding-top: 236px;
+		}
+		.sec-header_4__left{
+			margin-left: 20px;
+			max-width: 635px;
+		}
+		.sec-header_4__text{
+			max-width: 561px;
+		}
+		.sec-header_4__form {
+		    margin-top: 66px;
+		}
+		.sec-header_4__img{
+			max-width: 928px;
+    		right: -172px;
+		}
+		.sec-header__img2{
+		    max-width: 701px;
+		    right: -70px;
+		}
+		.sec-header_5__wrap{
+			padding-top: 184px;
+		}
+		.sec-header_5__bottom {
+		    margin-top: 93px;
+		}
+		.sec-header_5__bottom-right {
+		    max-width: 361px;
+		}
+		.sec-header_5__bottom-left {
+		    padding: 0;
+		    width: 66%;
 		}
 	}
 }
