@@ -389,6 +389,9 @@ body{
 			position: absolute;
 			bottom: 0;
 			right: -159px;
+			.block-shape__dec{
+				top: 57%;
+			}
 		}
 	}
 	&_5{
@@ -461,6 +464,9 @@ body{
 			max-width: 790px;
 		    top: 130px;
     		right: 306px;
+    		.block-shape__dec{
+    			left: 64%;
+    		}
 		}
 		.sec-header_2__left{
 			margin-left: 0px;
@@ -1103,7 +1109,7 @@ body{
 	&__img{
 		position: absolute;
 		bottom: 0;
-		right: -134px;
+		right: 0;
 		z-index: 1;
 	}
 	&__form{

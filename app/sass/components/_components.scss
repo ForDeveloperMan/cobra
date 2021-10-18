@@ -75,6 +75,22 @@ a{
 	}
 }
 
+.block-shape{
+	&__img{
+		position: relative;
+		z-index: 10;
+	}
+	&__dec{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
+		max-width: none;
+		z-index: 1;
+		pointer-events: none;
+	}
+}
+
 .title{
 	font-family: 'Montserrat';
 	color: #FFFFFF;
@@ -1890,9 +1906,13 @@ a{
 	&__img{
 		position: absolute;
 		bottom: 0;
-		right: 0;
+		right: 200px;
 		pointer-events: none;
 		z-index: 1;
+		.block-shape__dec{
+			max-width: 600px;
+			left: 74%;
+		}
 	}
 	&__content{
 		max-width: 850px;
