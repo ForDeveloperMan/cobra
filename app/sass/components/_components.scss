@@ -490,11 +490,27 @@ a{
 		color: #FFFFFF;
 		line-height: 1.4;
 	}
+	&_big{
+		padding-bottom: 44px;
+		.info-el__title{
+			font-size: 32px;
+			margin-bottom: 25px;
+		}
+		.info-el__text{
+			text-transform: uppercase;
+		}
+	}
 }
 
 .block-info{
 	display: flex;
 	flex-wrap: wrap;
+	&_2{
+		flex-wrap: nowrap;
+		.block-info__el{
+			width: 100%;
+		}
+	}
 	&__el{
 		width: 25%;
 		&:nth-child(2){
@@ -599,6 +615,38 @@ a{
 		&-el{
 			width: 49%;
 		}
+	}
+}
+
+.block-form-long{
+	background: rgba(8, 10, 15, 0.5);
+	border: 1px solid rgba(255, 184, 145, 0.5);
+	padding: 50px 50px;
+	position: relative;
+	&__img{
+		position: absolute;
+		top: -190px;
+		right: -161px;
+		pointer-events: none;
+		z-index: 1;
+	}
+	&__content{
+		max-width: 730px;
+		position: relative;
+		z-index: 10;
+	}
+	&__title{
+		margin-bottom: 32px;
+	}
+	&__elms{
+		display: flex;
+		justify-content: space-between;
+		&-el{
+			width: 49%;
+		}
+	}
+	&__checkbox{
+		margin-top: 29px;
 	}
 }
 
