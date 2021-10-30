@@ -1572,6 +1572,10 @@
 			}
 		}
 	}
+
+	.info-el__title{
+		margin-top: -22px;
+	}
 }
 
 @media screen and (max-width: 991px){
@@ -1654,7 +1658,7 @@
 		flex-wrap: wrap;
 		margin-bottom: 0;
 		.block-info__el{
-			margin-bottom: 20px;
+			margin-bottom: 30px;
 		}
 	}
 
@@ -3223,7 +3227,7 @@
 		font-size: 21px;
 	}
 	.block-info_2 .block-info__el{
-		margin-bottom: 10px;
+		margin-bottom: 22px;
 	}
 	.sec-header_7__info{
 		margin-top: 40px;
@@ -3236,5 +3240,21 @@
 	}
 	.sec-header_7__title{
 		min-height: 0;
+	}
+	.sec-header_7__text{
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 253px;
+	}
+	.sec-header_7__mob{
+		margin-top: 112px;
+	}
+	.sec-header_6{
+		.sec-header__mapbtn-mob{
+			top: 43%;
+		}
+	}
+	.info-el__title{
+		margin-top: -12px;
 	}
 }
