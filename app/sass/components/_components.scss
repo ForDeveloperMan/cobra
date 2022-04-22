@@ -280,18 +280,25 @@ a{
 	border: 1px solid rgba(255, 184, 145, 0.5);
 	position: relative;
 	padding: 84px 50px;
+	padding-top: 134px;
 	padding-bottom: 49px;
 	&__img{
 		position: absolute;
 		left: 50%;
-		top: -172px;
+		top: -155px;
 		transform: translateX(-50%);
+		z-index:2;
+		width: auto;
+		height: 282px;
+		max-width: 300px;
+		object-fit: contain;
 	}
 	&__title{
 		text-align: center;
 		position: relative;
 		z-index: 10;
 		margin-bottom: 25px;
+		text-transform: none;
 	}
 	&__el{
 		margin-bottom: 10px;
@@ -319,7 +326,7 @@ a{
 	&, &::placeholder{
 		font-family: 'Montserrat';
 		font-weight: 500;
-		font-size: 12px;
+		font-size: 19px;
 		letter-spacing: 0.1em;
 		color: #080A0F;
 	}
@@ -375,6 +382,8 @@ a{
 	padding: 22px 20px;
 	max-width: 100%;
 	transition: .2s;
+	margin-left:0;
+	border-radius:0;
 	&_border{
 		border: 1px solid #FFB891;
 		background-color: transparent;
@@ -478,8 +487,7 @@ a{
 	}
 	&__title{
 		font-family: 'Montserrat';
-		font-size: 30px;
-		text-transform: uppercase;
+		font-size: 27px;
 		color: #FFB891;
 		position: relative;
 		margin-top: -19px;
@@ -500,6 +508,18 @@ a{
 			text-transform: uppercase;
 		}
 	}
+}
+.big {
+    .info-el{
+		padding-bottom: 44px;
+		.info-el__title {
+			font-size: 32px;
+			margin-bottom: 25px;
+		}
+		.info-el__text{
+			text-transform: uppercase;
+		}	        
+    }
 }
 
 .block-info{
@@ -588,14 +608,18 @@ a{
 	width: 100%;
 	&__img{
 		position: absolute;
-	    top: -58px;
-    	right: 38px;
+	    top: -87px;
+    	right: -50px;
 		z-index: 10;
+		width: 368px;
+		height: 173px;
+		object-fit: contain;
 	}
 	&__title{
 		margin-bottom: 32px;
 		position: relative;
 		z-index: 20;
+		text-transform: none;
 	}
 	&__content{
 		display: flex;
@@ -617,7 +641,6 @@ a{
 		}
 	}
 }
-
 .block-form-long{
 	background: rgba(8, 10, 15, 0.5);
 	border: 1px solid rgba(255, 184, 145, 0.5);
@@ -625,10 +648,13 @@ a{
 	position: relative;
 	&__img{
 		position: absolute;
-		top: -190px;
-		right: -161px;
+		top: -48px;
+		right: -24px;
 		pointer-events: none;
 		z-index: 1;
+		width: 520px;
+		height: 400px;
+		object-fit: contain;
 	}
 	&__content{
 		max-width: 730px;
@@ -637,6 +663,7 @@ a{
 	}
 	&__title{
 		margin-bottom: 32px;
+		text-transform: none;
 	}
 	&__elms{
 		display: flex;
@@ -649,7 +676,6 @@ a{
 		margin-top: 29px;
 	}
 }
-
 
 .text-sec{
 	font-family: 'Montserrat';
@@ -672,8 +698,14 @@ a{
 		left: 52%;
 		transform: translateX(-50%);
 		top: -199px;
-		z-index: 1;
+		z-index: 2;
 		pointer-events: none;
+		height: 382px;
+		width: 100%;
+		object-fit: contain;
+		&_mob{
+			display: none;
+		}
 	}
 	&__content{
 		position: relative;
@@ -727,24 +759,37 @@ a{
 		cursor: pointer;
 	}
 	.ui-datepicker-prev{
-		background: url('../img/icons/leftArr.svg') no-repeat center;
+		background: url('img/icons/leftArr.svg') no-repeat center;
 		order: 1;
+		span{
+			display: none;
+		}
 	}
 	.ui-datepicker-next{
-		background: url('../img/icons/rightArr.svg') no-repeat center;
+		background: url('img/icons/rightArr.svg') no-repeat center;
 		order: 3;
+		span{
+			display: none;
+		}
 	}
 	th{
+		background: transparent;
 		font-weight: 500;
 		font-size: 14px;
 		text-transform: lowercase;
 		color: #080A0F;
 		padding: 0;
 	}
+	tr{
+		background: transparent;
+	}
 	thead{
 		span{
 			display: block;
 			margin-bottom: 10px;
+		}
+		tr{
+			border-bottom: 0;
 		}
 	}
 }
@@ -877,6 +922,18 @@ a{
 
 .center{
 	text-align: center;
+}
+
+.form-download{
+	&__inp{
+		margin-bottom: 20px;
+	}
+	&__checkbox{
+		margin-top: 20px;
+	}
+	.btn{
+		width: 100%;
+	}
 }
 
 .block-gallery{
@@ -1595,6 +1652,10 @@ a{
 		color: #080A0F;
 		padding: 10px 15px;
 	}
+	&__icon {
+	    background: #000;
+        border-radius: 50px;
+	}
 }
 
 .locate-info-el{
@@ -1717,6 +1778,7 @@ a{
 		cursor: pointer;
 		user-select: none;
 		transition: .2s;
+		text-align:center;
 		&.active{
 			background: rgba(255, 184, 145, 0.3);
 		}
@@ -2445,6 +2507,121 @@ a{
 		margin-right: 24px;
 		&:last-child{
 			margin-right: 0;
+		}
+	}
+}
+
+
+.block-nav{
+	&__prev, &__next{
+		background: rgba(255, 255, 255, 0.4);
+		border: 1px solid rgba(30, 33, 42, 0.2);
+		opacity: 1;
+		transition: .3s;
+	}
+	&__prev, &__next{
+		&:hover{
+			background: rgba(255, 255, 255, 0.9);
+		}
+	}
+}
+
+.block-slider{
+	&__img{
+		width: 100%;
+		height: 670px;
+		object-fit: cover;
+	}
+	&__nav{
+		position: absolute;
+		z-index: 10;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+.ul-check{
+	li{
+		margin-bottom: 18px;
+		&:last-child{
+			margin-bottom: 0;
+		}
+		padding-left: 22px;
+		position: relative;
+		&::after{
+			content: '';
+			position: absolute;
+			top: 10px;
+			left: 0;
+			background: url('../img/icons/check.svg') no-repeat center / contain;
+			width: 10px;
+			height: 8px;
+		}
+	}
+}
+
+.block-slider-info{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	&__slider{
+		width: 524px;
+		margin-right: 40px;
+	}
+	&__content{
+		flex: 1;
+		margin-top: 50px;
+		position: relative;
+		z-index: 10;
+	}
+	&__top{
+		background: #FFF9F6;
+		padding: 34px 40px 40px;
+		margin-left: -111px;
+		margin-bottom: 40px;
+	}
+	&__title{
+		color: #080A0F;
+		font-size: 26px;
+		max-width: 700px;
+		line-height: 1.5;
+	}
+	.title_dec2::after{
+		left: 0 !important;
+		transform: none !important;
+	}
+	&__block{
+		background: #FFFFFF;
+		border: 1px solid rgba(255, 184, 145, 0.3);
+		padding: 27px 37px;
+		padding-right: 30px;
+	}
+	&__btn{
+		margin-top: 40px;
+		width: 395px;
+		letter-spacing: 0.1em;
+		text-align: center;
+		height: 65px;
+	}
+	.text-sec{
+		color: #080A0F;
+		line-height: 1.5;
+	}
+	&_2{
+		.block-slider-info__content{
+			// margin-top: 80px;
+		}
+		.block-slider-info__slider{
+			margin-right: 0;
+			margin-left: 40px;
+		}
+		.block-slider-info__top{
+			margin-left: 0;
+			margin-right: -111px;
 		}
 	}
 }

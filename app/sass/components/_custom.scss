@@ -1,0 +1,48 @@
+.form-custom-error {
+	background: lightcoral;
+	padding: 4px 10px;
+	margin-top: 18px;
+	margin-bottom: -20px;
+	font-size: 14px;
+}
+.form-custom-success {
+	background: darkseagreen;
+	padding: 4px 10px;
+	margin-top: 18px;
+	margin-bottom: -20px;
+	font-size: 14px;
+}
+.wa-form .wa-button-mob {
+    display: none;
+}
+.onepage_disclaimer { 
+    p {
+    	font-family: 'Montserrat';
+    	font-size: 12px;
+    	color: #ABABAB;
+    	line-height: 1.4;
+    }
+}
+.text_logo { 
+    p {
+	    color: #FFFFFF;
+    }
+}
+@media screen and (max-width: 1280px){
+    .wa-form .wa-hide,
+    .wa-form button {
+	    display: none;
+    }
+    .wa-form .wa-button-mob {
+        display:inline-flex!important;
+    }
+    
+}
+@media screen and (max-width: 650px){
+    .text_logo { 
+        p {
+    	    font-size: 13px;
+            line-height: 1.4;
+        }
+    }
+}

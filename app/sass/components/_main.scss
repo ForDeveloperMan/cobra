@@ -1,7 +1,7 @@
 html{
 	position: relative;
 	max-width: 100vw;
-	overflow-x: hidden;
+	/*overflow-x: hidden;*/
 }
 
 body{
@@ -14,7 +14,11 @@ body{
 	// max-width: 2220px;
 	margin-left: auto;
 	margin-right: auto;
-	overflow-x: hidden;
+}
+
+section{
+	max-width: 100vw;
+	overflow: hidden;
 }
 
 .wrapper{
@@ -23,6 +27,8 @@ body{
 	flex-direction: column;
 	min-height: 100vh;
 	z-index: 10;
+	overflow-x: hidden;
+	overflow-y: auto;
 	&::after{
 		content: '';
 		position: absolute;
@@ -98,6 +104,9 @@ body{
 	&__right{
 		display: flex;
 		align-items: center;
+		.contact-info {
+	        min-width: 232px;
+        }
 	}
 	&__socials{
 		margin-left: 100px;
@@ -106,6 +115,15 @@ body{
 	&__center{
 		border-left: 1px solid rgba(255, 255, 255, 0.1);
 		border-right: 1px solid rgba(255, 255, 255, 0.1);
+		width: 140px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 37px 0;
+	}
+	&__center-empty{
+		border-left: none;
+		border-right: none;
 		width: 140px;
 		display: flex;
 		align-items: center;
@@ -169,6 +187,26 @@ body{
 	background-color: #080A0F;
 	@media screen and (min-width: 1280px){
 		min-height: 900px;
+	}
+	&__video{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		z-index: 1;
+		pointer-events: none;
+	}
+	&__wrapper{
+		position: relative;
+		z-index: 10;
+		flex: 1;
+	}
+	&_page{
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
 	}
 	&__overlay{
 		position: absolute;
@@ -261,10 +299,15 @@ body{
 	&__content{
 		display: flex;
 		justify-content: space-between;
+		.block-shape {
+		    /*overflow:hidden; 2021-11-02 на экране 2 обрезал шейп*/
+		}
 	}
 	&__right{
 		max-width: 460px;
 		width: 100%;
+		position:relative;
+		z-index:1;
 	}
 	&__bottom{
 		margin-top: 68px;
@@ -341,11 +384,11 @@ body{
 						margin-bottom: 32px;
 					}
 					.block-form-3__img{
-						width: 368px;
-						height: auto;
 						transform: none;
+						width: 368px;
+						height: 197px;
 						left: auto;
-						top: -58px;
+						top: -94px;
 	    				right: 38px;
 					}
 					.sec-header_3__form{
@@ -448,9 +491,9 @@ body{
 			margin-top: 74px;
 		}
 		.sec-header__img_6{
-			max-width: 725px;
-			top: 136px;
-			right: 169px;
+			max-width: 561px;
+			right: 202px;
+			top: 222px;
 			.block-shape__dec{
 				max-width: 537px;
 			    top: 53%;
@@ -700,6 +743,16 @@ body{
 			.btn svg{
 				max-width: 12px;
 			}
+			.sec-header__img{
+				right: 195px;
+				top: 230px;
+			}
+			.sec-header__img-img{
+				max-width: 650px;
+			}
+			.block-shape__dec{
+				max-width: 692px;
+			}
 		}
 		&_3{
 			.btn svg{
@@ -857,7 +910,7 @@ body{
 }
 @media screen and (min-width: 1281px) and (max-width: 1550px){
 	.container_header{
-		max-width: 1162px;
+		max-width: 1090px;
 	}
 	.sec-header_w_1 .sec-header__left{
 		margin-left: 20px;
@@ -868,8 +921,8 @@ body{
 	.sec-header__mapbtn{
 		display: flex;
 		transform: none;
-		top: auto;
-		bottom: 11px;
+		// top: auto;
+		// bottom: 11px;
 	}
 	.sec-header_w .sec-header__img_1{
 		max-width: 622px;
@@ -1033,7 +1086,7 @@ body{
 }
 
 .sec-info{
-	background: url('../img/bg/secInfo.png') no-repeat center;
+	background: url('/themes/custom/mostheme/img/bg/secInfo.png') no-repeat center;
 	background-position: 100% 0;
 	position: relative;
 	&::after{
@@ -1078,6 +1131,11 @@ body{
 	}
 	&__content{
 		max-width: 550px;
+		width: 100%;
+	}
+	&__form{
+		margin-top: 40px;
+		max-width: 500px;
 		width: 100%;
 	}
 	&__body{
@@ -1127,7 +1185,7 @@ body{
 }
 
 .sec-info-2{
-	background: url('../img/bg/secInfo2.jpg') no-repeat top / cover;
+	background: url('/themes/custom/mostheme/img/bg/secInfo2.jpg') no-repeat top / cover;
 	background-color: #080A0F;
 	position: relative;
 	&::after{
@@ -1279,7 +1337,7 @@ body{
 }
 
 .sec-documents{
-	background: url('../img/bg/sec-doc.jpg') no-repeat top / cover;
+	background: url('img/bg/sec-doc.jpg') no-repeat top / cover;
 	background-color: #080A0F;
 	@include bg_dec;
 	&::after{
@@ -1327,7 +1385,7 @@ body{
 }
 
 .sec-info-4{
-	background: url('../img/bg/sec-info4.jpg') no-repeat top / cover;
+	background: url('/themes/custom/mostheme/img/bg/sec-info4.jpg') no-repeat top / cover;
 	background-color: #080A0F;
 	@include bg_dec;
 	&::after{
@@ -1489,5 +1547,23 @@ body{
 		font-family: 'Montserrat';
 		font-size: 14px;
 		color: #FFFFFF;
+	}
+}
+
+.sec-info-5{
+	&__wrap{
+		padding: 120px 0;
+	}
+	&__content{
+		max-width: 1300px;
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&__el{
+		margin-bottom: 120px;
+		&:last-child{
+			margin-bottom: 0;
+		}
 	}
 }
